@@ -1,62 +1,13 @@
-<!ELEMENT car-showroom (agencies, owners, properties, flats)>
-        <!ATTLIST car-showroom
-                language CDATA #FIXED "EN">
-
-        <!ELEMENT agencies (agency*)>
-        <!ELEMENT owners (owner*)>
-        <!ELEMENT properties (property*)>
-        <!ELEMENT flats (flat, flat+)>
-
-
-        <!-- http://textmechanic.com/text-tools/combination-permutation-tools/permutation-generator/ -->
-
-        <!ELEMENT agency (name, (
-                (address, email, phone) |
-                (address, phone, email) |
-                (email, address, phone) |
-                (email, phone, address) |
-                (phone, address, email) |
-                (phone, email, address)
-                ))>
-
-        <!ELEMENT owner (name, address)>
-        <!ATTLIST owner
-                idOwner ID #REQUIRED>
-
-        <!ELEMENT property (name, address, description, numberOfFlats, features?)>
-        <!ATTLIST property
-                idProperty ID #REQUIRED
-                owner IDREF #IMPLIED>
-
-        <!ELEMENT flat (name, data, features?, record*)>
-        <!ATTLIST flat
-                idFlat ID #REQUIRED
-                property IDREF #REQUIRED
-                comfort (A | B | C | D | E | F) "F">
-
+<!ELEMENT car-showroom (cars,employees)*>
+        <!ELEMENT cars (car)*>
+        <!ELEMENT car (brand,model,price)*>
+        <!ELEMENT brand (#PCDATA)>
+        <!ELEMENT model (#PCDATA)>
+        <!ELEMENT price (#PCDATA)>
+        <!ELEMENT employees (employee)*>
+        <!ELEMENT employee (name,email,address)*>
         <!ELEMENT name (#PCDATA)>
         <!ELEMENT email (#PCDATA)>
-        <!ELEMENT phone (#PCDATA)>
-        <!ELEMENT numberOfFlats (#PCDATA)>
-
-        <!ELEMENT features (feature, feature, feature?, feature?, feature?)>
-        <!ELEMENT feature (#PCDATA)>
-
-        <!ELEMENT record ((date, text) | record+)>
-        <!ELEMENT date (#PCDATA)>
-        <!ELEMENT text (#PCDATA)>
-
-        <!ELEMENT description (#PCDATA | flatReference)*>
-        <!ELEMENT flatReference (#PCDATA)>
-        <!ATTLIST flatReference
-                flatName IDREF #REQUIRED>
-
-        <!ELEMENT data ANY>
-
-        <!ELEMENT address (street, ((postalCode, state, country) | (state, postalCode)))>
+        <!ELEMENT address (street,city)*>
         <!ELEMENT street (#PCDATA)>
-        <!ELEMENT postalCode (#PCDATA)>
-        <!ELEMENT state (#PCDATA)>
-        <!ELEMENT country (#PCDATA)>
-
-        <!ENTITY sup2 "²">
+        <!ELEMENT city (#PCDATA)>

@@ -1,91 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE car-showroom SYSTEM "data.dtd">
 
-
 <car-showroom>
+    <cars>
+        <car>
+            <brand>Volkswagen</brand>
+            <model>Golf</model> 
+            <price>500000</price>
+        </car>
+        <car>
+            <brand>BMW</brand>
+            <model>X5</model>
+            <price>1000000</price>
+        </car>
+    </cars>
+    <employees>
+        <employee>
+            <name>Jan Novák</name>
+            <email>novak@gmail.com</email>
+            <address>
+                <street>Nová 20</street>
+                <city>Praha</city>
+            </address>
+        </employee>
+        <employee>
+            <name>Tomáš Novotný</name>
+            <email>novotny@gmail.com</email>
+            <address>
+                <street>Šikmá 133</street>
+                <city>Kladno</city>
+            </address>
+        </employee>
+    </employees>
 </car-showroom>
-<!--
-    <agencies>
-        <agency>
-            <name>Best properties in New York</name>
-            <email>info@best-nyc.com</email>
-            <phone>+1 212-606-3600</phone>
-            <address>
-                <street>934 5th avenue</street>
-                <postalCode>NY 10021</postalCode>
-                <state>New York</state>
-                <country>United States</country>
-            </address>
-        </agency>
-    </agencies>
-
-    <owners>
-        <owner idOwner="o1">
-            <name>NYC Real estate</name>
-            <address>
-                <street>984 6th avenue</street>
-                <postalCode>NY 10021</postalCode>
-                <state>New York</state>
-                <country>United States</country>
-            </address>
-        </owner>
-    </owners>
-
-    <properties>
-        <property idProperty="p1" owner="o1">
-            <name>Luxury Skyscraper</name>
-            <address>
-                <street>14 26th avenue</street>
-                <state>New York</state>
-                <postalCode>NY 10021</postalCode>
-            </address>
-            <description>
-                A total of 154 flats in 26 floors. There are 2 luxury apartments on the roof, with summer garden.
-                There is a security guard 24/7 in the reception. It's nearby a subway station, sea view. FBI around
-                the corner. Note especially the flat <flatReference flatName="f2">A2601</flatReference>, which is
-                the best one we offer currently.
-            </description>
-            <numberOfFlats>154</numberOfFlats>
-            <features>
-                <feature>elevator</feature>
-                <feature>parking</feature>
-                <feature>security</feature>
-                <feature>sea view</feature>
-                <feature>subway</feature>
-            </features>
-        </property>
-    </properties>
-
-    <flats>
-        <flat idFlat="f1" property="p1" comfort="F">
-            <name>A1001</name>
-            <data>A small flat with no windows. Bedbugs included.</data>
-            <record>
-                <record>
-                    <date>2015-07-11</date><text>Bedbugs observed.</text>
-                </record>
-                <record>
-                    <date>2015-07-12</date><text>Cleaning perfomed.</text>
-                </record>
-            </record>
-            <record>
-                <date>2016-01-25</date><text>Bedbugs observed once again.</text>
-            </record>
-        </flat>
-        <flat idFlat="f2" property="p1" comfort="A">
-            <name>A2601</name>
-            <data>
-                <description>Large suite with garden on the rooftop.</description>
-                Sea view, 200 m&sup2;.
-                <name>Splendid suite</name>
-                &lt;span class=&quot;btn&quot;&gt;Button&lt;/span&gt;
-            </data>
-            <features>
-                <feature>own elevator</feature>
-                <feature>garden</feature>
-                <feature>bath</feature>
-                <feature>2 bathrooms</feature>
-            </features>
-        </flat>
-    </flats>
--->
