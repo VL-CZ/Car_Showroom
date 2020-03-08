@@ -8,12 +8,13 @@
                 id-car-model ID #REQUIRED>
 
         <!ELEMENT cars (car)*>
-        <!ELEMENT car (price,color,fuel,description)>
+        <!ELEMENT car (price,color,engine,description)>
         <!ELEMENT price (#PCDATA)>
         <!ELEMENT color (#PCDATA)>
-        <!ELEMENT fuel EMPTY>
-            <!ATTLIST fuel
-                    type (gas|diesel) #REQUIRED>
+        <!ELEMENT engine EMPTY>
+            <!ATTLIST engine
+                    fuel (gas|diesel) #REQUIRED
+                    type CDATA #REQUIRED>
         <!ELEMENT description (#PCDATA | feature)*>
         <!ATTLIST car
                 model IDREF #REQUIRED>

@@ -23,7 +23,7 @@
         <car model="m1">
             <price>500000 CZK</price>
             <color>Blue</color>
-            <fuel type="diesel"/>
+            <engine fuel="diesel" type="1.6 TDI"/>
             <description>
                 Special offer!
                 <![CDATA[
@@ -38,7 +38,7 @@
         <car model="m2">
             <price>1800000 CZK</price>
             <color>Red</color>
-            <fuel type="diesel"/>
+            <engine fuel="diesel" type="1.9 TDI"/>
             <description>
                 <feature>10 airbags</feature>
                 <feature>leather seats</feature>
@@ -51,7 +51,7 @@
         <car model="m2">
             <price>2000000 CZK</price>
             <color>Silver</color>
-            <fuel type="gas"/>
+            <engine fuel="gas" type="V8"/>
             <description>
                 This luxury SUV comes in full option specification.
                 <feature>12 airbags</feature>
@@ -69,7 +69,7 @@
         <car model="m3">
             <price>1000000 CZK</price>
             <color>Black</color>
-            <fuel type="gas"/>
+            <engine fuel="gas" type="V6"/>
             <description>
                 <feature>LED Headlights</feature>
                 <feature>ABS</feature>
