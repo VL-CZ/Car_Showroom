@@ -2,34 +2,90 @@
 <!DOCTYPE car-showroom SYSTEM "data.dtd">
 
 <car-showroom>
-    <cars>
-        <car>
+    <!-- jednotlive modely aut -->
+    <car-models>
+        <car-model id-car-model="m1">
             <brand>Volkswagen</brand>
-            <model>Golf</model> 
-            <price>500000</price>
+            <model>Golf</model>
+        </car-model>
+        <car-model id-car-model="m2">
+            <brand>Audi</brand>
+            <model>Q7</model>
+        </car-model>
+        <car-model id-car-model="m3">
+            <brand>Audi</brand>
+            <model>A4</model>
+        </car-model>
+    </car-models>
+
+    <!-- konkretni auta -->
+    <cars>
+        <car model="m1">
+            <price>500000 CZK</price>
+            <color>Blue</color>
+            <fuel type="diesel"/>
+            <description>
+                Special offer!
+                <![CDATA[
+					<em>15% DISCOUNT!</em>
+				]]>
+                This model comes in Basic specification.
+                <feature>6 airbags</feature>
+                <feature>parking sensors</feature>
+                <feature>ABS</feature>
+            </description>
         </car>
-        <car>
-            <brand>BMW</brand>
-            <model>X5</model>
-            <price>1000000</price>
+        <car model="m2">
+            <price>1800000 CZK</price>
+            <color>Red</color>
+            <fuel type="diesel"/>
+            <description>
+                <feature>10 airbags</feature>
+                <feature>leather seats</feature>
+                <feature>parking sensors</feature>
+                <feature>4×4 (Four-wheel drive)</feature>
+                <feature>LED Headlights</feature>
+                <feature>ABS</feature>
+            </description>
+        </car>
+        <car model="m2">
+            <price>2000000 CZK</price>
+            <color>Silver</color>
+            <fuel type="gas"/>
+            <description>
+                This luxury SUV comes in full option specification.
+                <feature>12 airbags</feature>
+                <feature>integrated fridge</feature>
+                <feature>leather seats</feature>
+                <feature>parking sensors</feature>
+                <feature>4×4 (Four-wheel drive)</feature>
+                <feature>roof window</feature>
+                <feature>LED Headlights</feature>
+                <feature>ABS</feature>
+                <feature>Anti-Theft Device</feature>
+                <feature>360 View Camera</feature>
+            </description>
+        </car>
+        <car model="m3">
+            <price>1000000 CZK</price>
+            <color>Black</color>
+            <fuel type="gas"/>
+            <description>
+                <feature>LED Headlights</feature>
+                <feature>ABS</feature>
+                <feature>6 airbags</feature>
+                <feature>360 View Camera</feature>
+            </description>
         </car>
     </cars>
-    <employees>
-        <employee>
-            <name>Jan Novák</name>
-            <email>novak@gmail.com</email>
-            <address>
-                <street>Nová 20</street>
-                <city>Praha</city>
-            </address>
-        </employee>
-        <employee>
-            <name>Tomáš Novotný</name>
-            <email>novotny@gmail.com</email>
-            <address>
-                <street>Šikmá 133</street>
-                <city>Kladno</city>
-            </address>
-        </employee>
-    </employees>
+
+    <contact-info>
+        <email><?php echo(str_replace("@", " (at) ", "carshowroom123@gmail.com")) ?></email>
+        <phone-number>+420 777 555 111</phone-number>
+        <address>
+            <street>Old town square 27</street>
+            <city>Prague</city>
+            <country>&cz;</country>
+        </address>
+    </contact-info>
 </car-showroom>

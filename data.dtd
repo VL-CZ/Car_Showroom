@@ -1,13 +1,31 @@
-<!ELEMENT car-showroom (cars,employees)*>
-        <!ELEMENT cars (car)*>
-        <!ELEMENT car (brand,model,price)*>
+<!ELEMENT car-showroom (car-models,cars,contact-info)>
+
+        <!ELEMENT car-models (car-model)*>
+        <!ELEMENT car-model (brand,model)>
         <!ELEMENT brand (#PCDATA)>
         <!ELEMENT model (#PCDATA)>
+        <!ATTLIST car-model
+                id-car-model ID #REQUIRED>
+
+        <!ELEMENT cars (car)*>
+        <!ELEMENT car (price,color,fuel,description)>
         <!ELEMENT price (#PCDATA)>
-        <!ELEMENT employees (employee)*>
-        <!ELEMENT employee (name,email,address)*>
-        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT color (#PCDATA)>
+        <!ELEMENT fuel EMPTY>
+            <!ATTLIST fuel
+                    type (gas|diesel) #REQUIRED>
+        <!ELEMENT description (#PCDATA | feature)*>
+        <!ATTLIST car
+                model IDREF #REQUIRED>
+
+        <!ELEMENT contact-info (email,phone-number,address)>
         <!ELEMENT email (#PCDATA)>
-        <!ELEMENT address (street,city)*>
+        <!ELEMENT phone-number (#PCDATA)>
+        <!ELEMENT address (street,city,country)>
         <!ELEMENT street (#PCDATA)>
         <!ELEMENT city (#PCDATA)>
+        <!ELEMENT country (#PCDATA)>
+
+        <!ELEMENT feature (#PCDATA)>
+
+        <!ENTITY cz "Czech Republic">
