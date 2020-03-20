@@ -1,0 +1,2 @@
+(: vybere vsechna auta, ktere jezdi na naftu :)
+/car-showroom/cars/car[engine/@fuel="diesel"]

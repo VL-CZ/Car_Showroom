@@ -1,0 +1,2 @@
+(: vybere vsechna auta drazsi nez 1,500,000 ktera nemaji pohon vsech 4 kol :)
+/car-showroom/cars/car[not(four-wheel-drive) and price > 1500000]

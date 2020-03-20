@@ -8,7 +8,8 @@
                 id-car-model ID #REQUIRED>
 
         <!ELEMENT cars (car)*>
-        <!ELEMENT car (price,color,engine,description)>
+        <!ELEMENT four-wheel-drive EMPTY>
+        <!ELEMENT car ((price,color,engine,description)|(price,color,engine,four-wheel-drive,description))>
         <!ELEMENT price (#PCDATA)>
         <!ELEMENT color (#PCDATA)>
         <!ELEMENT engine EMPTY>

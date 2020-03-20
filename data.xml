@@ -21,7 +21,7 @@
     <!-- konkretni auta -->
     <cars>
         <car model="m1">
-            <price>500000 CZK</price>
+            <price>500000</price>
             <color>Blue</color>
             <engine fuel="diesel" type="1.6 TDI"/>
             <description>
@@ -36,29 +36,29 @@
             </description>
         </car>
         <car model="m2">
-            <price>1800000 CZK</price>
+            <price>1800000</price>
             <color>Red</color>
             <engine fuel="diesel" type="1.9 TDI"/>
             <description>
                 <feature>10 airbags</feature>
                 <feature>leather seats</feature>
                 <feature>parking sensors</feature>
-                <feature>4×4 (Four-wheel drive)</feature>
                 <feature>LED Headlights</feature>
                 <feature>ABS</feature>
             </description>
         </car>
         <car model="m2">
-            <price>2000000 CZK</price>
+            <price>2000000</price>
             <color>Silver</color>
             <engine fuel="gas" type="V8"/>
+            <four-wheel-drive/>
             <description>
                 This luxury SUV comes in full option specification.
                 <feature>12 airbags</feature>
                 <feature>integrated fridge</feature>
                 <feature>leather seats</feature>
                 <feature>parking sensors</feature>
-                <feature>4×4 (Four-wheel drive)</feature>
+                <feature>Heated steering wheel</feature>
                 <feature>roof window</feature>
                 <feature>LED Headlights</feature>
                 <feature>ABS</feature>
@@ -67,9 +67,10 @@
             </description>
         </car>
         <car model="m3">
-            <price>1000000 CZK</price>
+            <price>1000000</price>
             <color>Black</color>
             <engine fuel="gas" type="V6"/>
+            <four-wheel-drive/>
             <description>
                 <feature>LED Headlights</feature>
                 <feature>ABS</feature>

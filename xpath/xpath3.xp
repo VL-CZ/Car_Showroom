@@ -1,0 +1,2 @@
+(: vybere vsechna auta s pohonem vsech 4 kol :)
+/car-showroom/cars/car[four-wheel-drive]

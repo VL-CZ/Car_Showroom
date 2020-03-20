@@ -1,0 +1,2 @@
+(: vybere vsechna auta, ktera maji ve vybave aspon 10 prvku :)
+/car-showroom/cars/car[count(description/feature)>=10]
