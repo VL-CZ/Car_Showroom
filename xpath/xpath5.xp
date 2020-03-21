@@ -1,2 +1,2 @@
-(: vybere prvni auto v autosalonu :)
+(: vybere prvni auto ze seznamu aut v autosalonu :)
 /car-showroom/cars/car[position()=1]

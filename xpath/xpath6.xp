@@ -1,2 +1,0 @@
-(: vybere vsechny modely znacky Audi :)
-/car-showroom/car-models/car-model/model[ancestor::car-model/brand="Audi"]
