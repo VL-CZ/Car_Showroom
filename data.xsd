@@ -23,7 +23,7 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="contact-info" type="TContactInfo"/>
+                <xs:element ref="contact-info"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -65,6 +65,8 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
+
+    <xs:element name="contact-info" type="TContactInfo"/>
 
     <xs:complexType name="TEngine">
         <xs:attribute name="fuel" type="TFuel" use="required"/>
