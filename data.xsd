@@ -1,4 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="car-showroom">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="car-models">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="car-model" type="TCarModel"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="cars">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="car" type="TCar"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="contact-info" type="TContactInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="TCarModel">
+        <xs:sequence>
+            <xs:element name="brand" type="xs:string"/>
+            <xs:element name="model" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id-car-model" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="TCar">
+        <xs:sequence>
+            <xs:element name="price" type="xs:integer"/>
+            <xs:element name="color" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="model" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="TContactInfo">
+        <xs:sequence>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="phone-number" type="xs:string"/>
+            <xs:element name="address">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="street" type="xs:string"/>
+                        <xs:element name="city" type="xs:string"/>
+                        <xs:element name="country" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
 
 </xs:schema>
