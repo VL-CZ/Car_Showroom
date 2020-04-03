@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE car-showroom SYSTEM "data.dtd">
 
-<car-showroom>
+<car-showroom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="data.xsd">
     <!-- jednotlive modely aut -->
     <car-models>
         <car-model id-car-model="m1">
