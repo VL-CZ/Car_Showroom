@@ -82,7 +82,7 @@
 
     <contact-info>
         <email><?php echo(str_replace("@", " (at) ", "carshowroom123@gmail.com")) ?></email>
-        <phone-number>+420 777 555 111</phone-number>
+        <phone-number countryPrefix="cz">777 555 111</phone-number>
         <address>
             <street>Old town square 27</street>
             <city>Prague</city>

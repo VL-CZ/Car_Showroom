@@ -9,6 +9,12 @@
                             <xs:element name="car-model" type="TCarModel" maxOccurs="unbounded"/>
                         </xs:sequence>
                     </xs:complexType>
+
+                    <!-- unique values of id-car-model -->
+                    <xs:unique name="unique-car-model">
+                        <xs:selector xpath="./car-model"/>
+                        <xs:field xpath="./@id-car-model"/>
+                    </xs:unique>
                 </xs:element>
                 <xs:element name="cars">
                     <xs:complexType>
@@ -44,7 +50,7 @@
     <xs:complexType name="TContactInfo">
         <xs:sequence>
             <xs:element name="email" type="xs:string"/>
-            <xs:element name="phone-number" type="xs:string"/>
+            <xs:element name="phone-number" type="TPhoneNumber"/>
             <xs:element name="address">
                 <xs:complexType>
                     <xs:sequence>
@@ -74,4 +80,12 @@
             <xs:enumeration value="diesel"/>
         </xs:restriction>
     </xs:simpleType>
+
+    <xs:complexType name="TPhoneNumber">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="countryPrefix" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
 </xs:schema>
