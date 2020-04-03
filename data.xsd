@@ -42,7 +42,10 @@
             <xs:element name="color" type="xs:string"/>
             <xs:element name="engine" type="TEngine"/>
             <xs:element name="four-wheel-drive" minOccurs="0"/>
-            <xs:element name="description" type="TCarDescription"/>
+            <xs:choice>
+                <xs:element name="feature-list" type="TCarFeatures"/>
+                <xs:element name="car-detail" type="TCarDetail"/>
+            </xs:choice>
         </xs:sequence>
         <xs:attribute name="model" type="xs:IDREF" use="required"/>
     </xs:complexType>
@@ -68,10 +71,22 @@
         <xs:attribute name="type" type="xs:string"/>
     </xs:complexType>
 
-    <xs:complexType name="TCarDescription" mixed="true">
+    <!-- element representing list of features -->
+    <xs:complexType name="TCarFeatures">
         <xs:sequence>
             <xs:element name="feature" type="xs:string" minOccurs="2" maxOccurs="50"/>
         </xs:sequence>
+    </xs:complexType>
+
+    <!-- element representing detail car info (e.g. list of features and quick description) -->
+    <xs:complexType name="TCarDetail">
+        <xs:complexContent>
+            <xs:extension base="TCarFeatures">
+                <xs:sequence>
+                    <xs:element name="description" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
     </xs:complexType>
 
     <xs:simpleType name="TFuel">
