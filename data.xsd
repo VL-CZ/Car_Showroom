@@ -27,7 +27,7 @@
             <xs:element name="brand" type="xs:string"/>
             <xs:element name="model" type="xs:string"/>
         </xs:sequence>
-        <xs:attribute name="id-car-model" type="xs:string"/>
+        <xs:attribute name="id-car-model" type="xs:ID"/>
     </xs:complexType>
 
     <xs:complexType name="TCar">
@@ -38,7 +38,7 @@
             <xs:element name="four-wheel-drive" minOccurs="0"/>
             <xs:element name="description" type="TCarDescription"/>
         </xs:sequence>
-        <xs:attribute name="model" type="xs:string" use="required"/>
+        <xs:attribute name="model" type="xs:IDREF" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="TContactInfo">
@@ -64,7 +64,7 @@
 
     <xs:complexType name="TCarDescription" mixed="true">
         <xs:sequence>
-            <xs:element name="feature" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="feature" type="xs:string" minOccurs="2" maxOccurs="50"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
