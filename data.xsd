@@ -6,14 +6,14 @@
                 <xs:element name="car-models">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="car-model" type="TCarModel"/>
+                            <xs:element name="car-model" type="TCarModel" maxOccurs="unbounded"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="cars">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="car" type="TCar"/>
+                            <xs:element name="car" type="TCar" maxOccurs="unbounded"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -34,8 +34,11 @@
         <xs:sequence>
             <xs:element name="price" type="xs:integer"/>
             <xs:element name="color" type="xs:string"/>
+            <xs:element name="engine" type="TEngine"/>
+            <xs:element name="four-wheel-drive" minOccurs="0"/>
+            <xs:element name="description" type="TCarDescription"/>
         </xs:sequence>
-        <xs:attribute name="model" type="xs:string"/>
+        <xs:attribute name="model" type="xs:string" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="TContactInfo">
@@ -54,4 +57,14 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="TEngine">
+        <xs:attribute name="fuel" type="xs:string" use="required"/>
+        <xs:attribute name="type" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="TCarDescription" mixed="true">
+        <xs:sequence>
+            <xs:element name="feature" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>
