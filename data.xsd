@@ -58,7 +58,7 @@
     </xs:complexType>
 
     <xs:complexType name="TEngine">
-        <xs:attribute name="fuel" type="xs:string" use="required"/>
+        <xs:attribute name="fuel" type="TFuel" use="required"/>
         <xs:attribute name="type" type="xs:string"/>
     </xs:complexType>
 
@@ -67,4 +67,11 @@
             <xs:element name="feature" type="xs:string" minOccurs="2" maxOccurs="50"/>
         </xs:sequence>
     </xs:complexType>
+
+    <xs:simpleType name="TFuel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="gas"/>
+            <xs:enumeration value="diesel"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
