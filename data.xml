@@ -24,18 +24,11 @@
             <price>500000</price>
             <color>Blue</color>
             <engine fuel="diesel" type="1.6 TDI"/>
-            <car-detail>
+            <feature-list>
                 <feature>6 airbags</feature>
                 <feature>parking sensors</feature>
                 <feature>ABS</feature>
-                <description>
-                    Special offer!
-                    <![CDATA[
-					    <em>15% DISCOUNT!</em>
-				    ]]>
-                    This model comes in Basic specification.
-                </description>
-            </car-detail>
+            </feature-list>
         </car>
         <car model="m2">
             <price>1800000</price>
@@ -54,7 +47,7 @@
             <color>Silver</color>
             <engine fuel="gas" type="V8"/>
             <four-wheel-drive/>
-            <car-detail>
+            <feature-list>
                 <feature>12 airbags</feature>
                 <feature>integrated fridge</feature>
                 <feature>leather seats</feature>
@@ -65,8 +58,7 @@
                 <feature>ABS</feature>
                 <feature>Anti-Theft Device</feature>
                 <feature>360 View Camera</feature>
-                <description>This luxury SUV comes in full option specification.</description>
-            </car-detail>
+            </feature-list>
         </car>
         <car model="m3">
             <price>1000000</price>

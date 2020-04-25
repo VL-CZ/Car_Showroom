@@ -23,26 +23,28 @@
     </xsl:template>
 
     <xsl:template match="cars/car" mode="carDetail">
-        <xsl:apply-templates select="." mode="carModel"/>
-        <div>
-            Price:
-            <xsl:value-of select="price"/>
-        </div>
-        <div>
-            Engine:
-            <xsl:apply-templates select="engine"/>
-        </div>
-        <div>
-            Color:
-            <xsl:value-of select="color"/>
-        </div>
-        <xsl:if test="four-wheel-drive">
+        <div style="background: LightGray">
+            <xsl:apply-templates select="." mode="carModel"/>
             <div>
-                <xsl:text>Four wheel drive</xsl:text>
+                Price:
+                <xsl:value-of select="price"/>
             </div>
-        </xsl:if>
-        <div>
-            <xsl:apply-templates select="feature-list"/>
+            <div>
+                Engine:
+                <xsl:apply-templates select="engine"/>
+            </div>
+            <div>
+                Color:
+                <xsl:value-of select="color"/>
+            </div>
+            <xsl:if test="four-wheel-drive">
+                <div>
+                    <xsl:text>Four wheel drive</xsl:text>
+                </div>
+            </xsl:if>
+            <div>
+                <xsl:apply-templates select="feature-list"/>
+            </div>
         </div>
     </xsl:template>
 
