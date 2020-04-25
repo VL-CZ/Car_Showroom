@@ -18,40 +18,66 @@
             </body>
         </html>
         <div>
-            <xsl:apply-templates select="car-showroom/cars/car"/>
+            <xsl:apply-templates select="car-showroom/cars/car" mode="carDetail"/>
         </div>
     </xsl:template>
 
-    <xsl:template match="cars/car">
-        <xsl:element name="h3">
-            <xsl:text>Car</xsl:text>
-        </xsl:element>
+    <xsl:template match="cars/car" mode="carDetail">
+        <xsl:apply-templates select="." mode="carModel"/>
         <div>
-            Price: <xsl:value-of select="price"/>
+            Price:
+            <xsl:value-of select="price"/>
         </div>
         <div>
-            Engine: <xsl:apply-templates select="engine"/>
+            Engine:
+            <xsl:apply-templates select="engine"/>
         </div>
         <div>
-            Color: <xsl:value-of select="color"/>
+            Color:
+            <xsl:value-of select="color"/>
         </div>
-        <div>
-            <xsl:if test="four-wheel-drive">
+        <xsl:if test="four-wheel-drive">
+            <div>
                 <xsl:text>Four wheel drive</xsl:text>
-            </xsl:if>
-        </div>
+            </div>
+        </xsl:if>
         <div>
             <xsl:apply-templates select="feature-list"/>
         </div>
     </xsl:template>
 
+    <xsl:template match="cars/car" mode="carModel">
+        <xsl:call-template name="car-model-info">
+            <xsl:with-param name="modelID" select="@model"/>
+        </xsl:call-template>
+    </xsl:template>
+
+    <xsl:template name="car-model-info">
+        <xsl:param name="modelID"/>
+
+        <xsl:variable name="carBrand" select="//car-models/car-model[@id-car-model=$modelID]/brand"/>
+        <xsl:variable name="carModel" select="//car-models/car-model[@id-car-model=$modelID]/model"/>
+
+        <xsl:element name="h3">
+            <xsl:attribute name="modelID">
+                <xsl:value-of select="$modelID"/>
+            </xsl:attribute>
+
+            <xsl:value-of select="$carBrand"/>
+            <xsl:text> </xsl:text>
+            <xsl:value-of select="$carModel"/>
+        </xsl:element>
+    </xsl:template>
+
     <xsl:template match="cars/car/engine">
         <ul>
             <li>
-                Fuel: <xsl:value-of select="@fuel"/>
+                Fuel:
+                <xsl:value-of select="@fuel"/>
             </li>
             <li>
-                Type: <xsl:value-of select="@type"/>
+                Type:
+                <xsl:value-of select="@type"/>
             </li>
         </ul>
     </xsl:template>
@@ -59,17 +85,19 @@
     <xsl:template match="cars/car/feature-list">
         <div>Features</div>
         <ul>
-        <xsl:for-each select="feature">
-            <li>
-                <xsl:value-of select="."/>
-            </li>
-        </xsl:for-each>
+            <xsl:for-each select="feature">
+                <li>
+                    <xsl:value-of select="."/>
+                </li>
+            </xsl:for-each>
         </ul>
     </xsl:template>
 
     <xsl:template name="contact">
         <div>
-            <div>Email: <xsl:value-of select="email"/></div>
+            <div>Email:
+                <xsl:value-of select="email"/>
+            </div>
         </div>
     </xsl:template>
 
