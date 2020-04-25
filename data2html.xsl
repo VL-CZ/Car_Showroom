@@ -8,13 +8,22 @@
             doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
     />
 
+    <!-- promenna reprezentujici nadpis se jmenem spolecnosti -->
+    <xsl:variable name="company-name">
+        <xsl:element name="h2">
+            <xsl:text>MY Car showroom</xsl:text>
+        </xsl:element>
+    </xsl:variable>
+
+    <!-- sablona pro vytvoreni zakladni kostry HTMl stranky -->
     <xsl:template match="/">
         <html>
             <head>
-                <title>Car showroom</title>
+                <title>MY Car showroom</title>
             </head>
             <body>
-                <h2>Cars</h2>
+                <xsl:copy-of select="$company-name"/>
+                <h3>Cars</h3>
                 <xsl:apply-templates select="car-showroom/cars/car" mode="carDetail"/>
 
                 <xsl:apply-templates select="car-showroom/contact-info"/>
@@ -22,6 +31,7 @@
         </html>
     </xsl:template>
 
+    <!-- tato sablona vytvori detail nabidky auta -->
     <xsl:template match="cars/car" mode="carDetail">
         <div style="background: LightGray">
             <xsl:apply-templates select="." mode="carModel"/>
@@ -45,29 +55,33 @@
         </div>
     </xsl:template>
 
+    <!-- sablona pro vytvoreni nazvu modelu auta (nejdrive vytvori element h4 s atributem modelID a pro vypsani
+    znacky a modelu auta zavola sablonu car-model-info s parametrem modelID) -->
     <xsl:template match="cars/car" mode="carModel">
-        <xsl:call-template name="car-model-info">
-            <xsl:with-param name="modelID" select="@model"/>
-        </xsl:call-template>
+        <xsl:element name="h4">
+            <xsl:attribute name="modelID">
+                <xsl:value-of select="@model"/>
+            </xsl:attribute>
+            <xsl:call-template name="car-model-info">
+                <xsl:with-param name="modelID" select="@model"/>
+            </xsl:call-template>
+        </xsl:element>
     </xsl:template>
 
+    <!-- tato sablona vraci text ve formatu "{brand} {model}"  - pozaduje parametr modelID (ID daneho modelu auta) -->
     <xsl:template name="car-model-info">
         <xsl:param name="modelID"/>
 
         <xsl:variable name="carBrand" select="//car-models/car-model[@id-car-model=$modelID]/brand"/>
         <xsl:variable name="carModel" select="//car-models/car-model[@id-car-model=$modelID]/model"/>
 
-        <xsl:element name="h3">
-            <xsl:attribute name="modelID">
-                <xsl:value-of select="$modelID"/>
-            </xsl:attribute>
+        <xsl:value-of select="$carBrand"/>
+        <xsl:text> </xsl:text>
+        <xsl:value-of select="$carModel"/>
 
-            <xsl:value-of select="$carBrand"/>
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="$carModel"/>
-        </xsl:element>
     </xsl:template>
 
+    <!-- tato sablona slouzi k vypisu informaci o motoru auta -->
     <xsl:template match="cars/car/engine">
         <ul>
             <li>
@@ -79,6 +93,7 @@
         </ul>
     </xsl:template>
 
+    <!-- tato sablona pomoci for-each cyklu vypise vsechny prvky vybavy daneho auta -->
     <xsl:template match="cars/car/feature-list">
         <div>Features</div>
         <ul>
@@ -90,8 +105,10 @@
         </ul>
     </xsl:template>
 
+    <!-- sablona vypisujici kontaktni informace-->
     <xsl:template match="contact-info">
         <div>
+            <xsl:copy-of select="$company-name"/>
             <div>
                 Email: <xsl:value-of select="email"/>
             </div>
