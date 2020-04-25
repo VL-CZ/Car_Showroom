@@ -75,8 +75,8 @@
     </cars>
 
     <contact-info>
-        <email><?php echo(str_replace("@", " (at) ", "carshowroom123@gmail.com")) ?></email>
-        <phone-number countryPrefix="cz">777 555 111</phone-number>
+        <email>carshowroom123@gmail.com</email>
+        <phone-number>777 555 111</phone-number>
         <address>
             <street>Old town square 27</street>
             <city>Prague</city>

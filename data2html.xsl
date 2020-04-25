@@ -15,31 +15,28 @@
             </head>
             <body>
                 <h2>Cars</h2>
+                <xsl:apply-templates select="car-showroom/cars/car" mode="carDetail"/>
+
+                <xsl:apply-templates select="car-showroom/contact-info"/>
             </body>
         </html>
-        <div>
-            <xsl:apply-templates select="car-showroom/cars/car" mode="carDetail"/>
-        </div>
     </xsl:template>
 
     <xsl:template match="cars/car" mode="carDetail">
         <div style="background: LightGray">
             <xsl:apply-templates select="." mode="carModel"/>
             <div>
-                Price:
-                <xsl:value-of select="price"/>
+                Price: <xsl:value-of select="price"/>
             </div>
             <div>
-                Engine:
-                <xsl:apply-templates select="engine"/>
+                Engine: <xsl:apply-templates select="engine"/>
             </div>
             <div>
-                Color:
-                <xsl:value-of select="color"/>
+                Color: <xsl:value-of select="color"/>
             </div>
             <xsl:if test="four-wheel-drive">
                 <div>
-                    <xsl:text>Four wheel drive</xsl:text>
+                    <xsl:text>4x4</xsl:text>
                 </div>
             </xsl:if>
             <div>
@@ -74,12 +71,10 @@
     <xsl:template match="cars/car/engine">
         <ul>
             <li>
-                Fuel:
-                <xsl:value-of select="@fuel"/>
+                Fuel: <xsl:value-of select="@fuel"/>
             </li>
             <li>
-                Type:
-                <xsl:value-of select="@type"/>
+                Type: <xsl:value-of select="@type"/>
             </li>
         </ul>
     </xsl:template>
@@ -95,10 +90,21 @@
         </ul>
     </xsl:template>
 
-    <xsl:template name="contact">
+    <xsl:template match="contact-info">
         <div>
-            <div>Email:
-                <xsl:value-of select="email"/>
+            <div>
+                Email: <xsl:value-of select="email"/>
+            </div>
+            <div>
+                Phone: <xsl:value-of select="phone-number"/>
+            </div>
+            <div>
+                Address:
+                <xsl:value-of select="address/street"/>
+                <xsl:text>, </xsl:text>
+                <xsl:value-of select="address/city"/>
+                <xsl:text>, </xsl:text>
+                <xsl:value-of select="address/country"/>
             </div>
         </div>
     </xsl:template>
