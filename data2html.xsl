@@ -22,19 +22,54 @@
         </div>
     </xsl:template>
 
-    <xsl:template match="car-showroom/cars/car">
-        <h3>Car</h3>
-        <div>
-            Model:
-        </div>
+    <xsl:template match="cars/car">
+        <xsl:element name="h3">
+            <xsl:text>Car</xsl:text>
+        </xsl:element>
         <div>
             Price: <xsl:value-of select="price"/>
         </div>
         <div>
-            Engine: <xsl:value-of select="engine/@fuel"/> <xsl:value-of select="engine/@type"/>
+            Engine: <xsl:apply-templates select="engine"/>
         </div>
         <div>
-            
+            Color: <xsl:value-of select="color"/>
+        </div>
+        <div>
+            <xsl:if test="four-wheel-drive">
+                <xsl:text>Four wheel drive</xsl:text>
+            </xsl:if>
+        </div>
+        <div>
+            <xsl:apply-templates select="feature-list"/>
+        </div>
+    </xsl:template>
+
+    <xsl:template match="cars/car/engine">
+        <ul>
+            <li>
+                Fuel: <xsl:value-of select="@fuel"/>
+            </li>
+            <li>
+                Type: <xsl:value-of select="@type"/>
+            </li>
+        </ul>
+    </xsl:template>
+
+    <xsl:template match="cars/car/feature-list">
+        <div>Features</div>
+        <ul>
+        <xsl:for-each select="feature">
+            <li>
+                <xsl:value-of select="."/>
+            </li>
+        </xsl:for-each>
+        </ul>
+    </xsl:template>
+
+    <xsl:template name="contact">
+        <div>
+            <div>Email: <xsl:value-of select="email"/></div>
         </div>
     </xsl:template>
 
