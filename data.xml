@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<car-showroom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:noNamespaceSchemaLocation="data.xsd">
+<car-showroom>
     <!-- jednotlive modely aut -->
     <car-models>
         <car-model id-car-model="m1">
@@ -17,6 +16,14 @@
             <model>A4</model>
         </car-model>
     </car-models>
+
+    <!-- modely aut, ktere uz se neprodavaji -->
+    <unavailable-car-models>
+        <car-model id-car-model="m4">
+            <brand>Ford</brand>
+            <model>Focus</model>
+        </car-model>
+    </unavailable-car-models>
 
     <!-- konkretni auta -->
     <cars>
