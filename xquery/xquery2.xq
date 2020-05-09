@@ -1,4 +1,4 @@
-(: vybere vsechny auta, ktera maji kozena sedadla :)
+(: vybere vsechny auta, ktera maji ve vybave kozena sedadla :)
 (: JOIN :)
 for $car in //cars/car
 for $car-model in //car-models/car-model

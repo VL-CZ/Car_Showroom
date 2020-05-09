@@ -1,4 +1,4 @@
-(: zobrazi vsechny znacky aut a modely aut v tabulce + zvyrazni modely znacky Audi:)
+(: zobrazi vsechny znacky aut a modely aut v tabulce + zvyrazni modely znacky Audi :)
 (: XHTML :)
 element html{
     element div{
@@ -9,10 +9,10 @@ element html{
         for $cm in //car-models/car-model
         return
             element tr{
-                attribute background{
+                attribute style{
                     if($cm/brand = 'Audi')
-                    then 'gray'
-                    else 'white'
+                    then 'background:gray'
+                    else 'background:white'
                 },
 
                 element td{ data($cm/brand)},
