@@ -2,9 +2,8 @@
 (: JOIN :)
 for $car in //cars/car
 for $car-model in //car-models/car-model
-where $car/@model = $car-model/@id-car-model
-where some $f in $car/feature-list/feature
-    satisfies $f = 'leather seats'
+where $car/@model = $car-model/@id-car-model and (some $f in $car/feature-list/feature
+    satisfies $f = 'leather seats')
 return
 <car>
     <model>
