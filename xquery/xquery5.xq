@@ -1,13 +1,17 @@
-(:  :)
+(: vybere auta s cenou bez dane :)
 (: FUNCTION :)
-declare function getCompactView($car) as element()*
+declare function getCarNoTax($car) as element()
 {
-return $car
+    let $tax := 21
+    let $price := (100 - $tax) * 0.01 * xs:int($car/price)
+    return
+        <car model="{$car/@model}">
+            <price tax="no">{$price}</price>
+            {$car/color}
+            {$car/engine}
+            {$car/feature-list}
+        </car>
 };
 
-<cars>
-{
 for $c in //cars/car
-return $c
-}
-</cars>
+return getCarNoTax($c)
