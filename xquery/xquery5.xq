@@ -1,13 +1,13 @@
+(:  :)
 (: FUNCTION :)
-declare function getAllRedCars($color) as element()*
+declare function getCompactView($car) as element()*
 {
-for $car in //cars/car
-where $car/color = $color
 return $car
 };
 
-for $rc in //
-return
-<c>
-{$rc}
-</c>
+<cars>
+{
+for $c in //cars/car
+return $c
+}
+</cars>

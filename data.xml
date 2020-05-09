@@ -19,10 +19,9 @@
 
     <!-- modely aut, ktere uz se neprodavaji -->
     <unavailable-car-models>
-        <car-model id-car-model="m4">
-            <brand>Ford</brand>
-            <model>Focus</model>
-        </car-model>
+        <car-model>
+            Ford Focus
+        </car-model>>
     </unavailable-car-models>
 
     <!-- konkretni auta -->
