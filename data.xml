@@ -53,7 +53,6 @@
             <price>2000000</price>
             <color>Silver</color>
             <engine fuel="gas" type="V8"/>
-            <four-wheel-drive/>
             <feature-list>
                 <feature>12 airbags</feature>
                 <feature>integrated fridge</feature>
@@ -71,7 +70,6 @@
             <price>1000000</price>
             <color>Black</color>
             <engine fuel="gas" type="V6"/>
-            <four-wheel-drive/>
             <feature-list>
                 <feature>LED Headlights</feature>
                 <feature>ABS</feature>
