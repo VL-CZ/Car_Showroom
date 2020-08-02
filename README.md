@@ -1,1 +1,1 @@
-HW_1
+XML Technologies course semestral project
